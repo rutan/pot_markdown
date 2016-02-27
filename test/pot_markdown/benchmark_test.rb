@@ -23,18 +23,19 @@ class BenchmarkTest < Test::Unit::TestCase
     end
   end
 
-  begin
-    require 'qiita-markdown'
+  test 'benchmark integration' do
+    text; # load
+    Benchmark.ips do |x|
+      x.report('pot_markdown') { PotMarkdown::Processor.new.call(text)[:output].to_s }
 
-    test 'benchmark with qiita-markdown' do
-      text; # load
-      Benchmark.ips do |x|
-        x.report('pot_markdown') { PotMarkdown::Processor.new.call(text)[:output].to_s }
+      begin
+        require 'qiita-markdown'
         x.report('qiita_markdown') { Qiita::Markdown::Processor.new.call(text)[:output].to_s }
-        x.compare!
+      rescue LoadError
+        puts 'skip benchmark test'
       end
+
+      x.compare!
     end
-  rescue LoadError
-    puts 'skip benchmark test'
   end
 end

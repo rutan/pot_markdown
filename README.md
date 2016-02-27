@@ -1,5 +1,7 @@
 # PotMarkdown
 
+[![Build Status](https://travis-ci.org/rutan/pot_markdown.svg)](https://travis-ci.org/rutan/pot_markdown)
+
 PotMarkdown is markdown processor for [Potmum](https://github.com/rutan/potmum).
 
 ## Installation
