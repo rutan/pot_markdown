@@ -8,16 +8,12 @@ class BenchmarkTest < Test::Unit::TestCase
 
   test 'each filter' do
     text; # load
+    context = {
+      asset_root: '/'
+    }
     Benchmark.ips do |x|
-      [
-        PotMarkdown::Filters::MarkdownFilter,
-        PotMarkdown::Filters::MentionFilter,
-        PotMarkdown::Filters::SanitizeHTMLFilter,
-        PotMarkdown::Filters::SanitizeIframeFilter,
-        PotMarkdown::Filters::SanitizeScriptFilter,
-        PotMarkdown::Filters::TOCFilter
-      ].each do |filter|
-        x.report(filter.name) { filter.new(text).call }
+      PotMarkdown::Processor::DEFAULT_FILTERS.each do |filter|
+        x.report(filter.name) { filter.new(text, context).call }
       end
       x.compare!
     end

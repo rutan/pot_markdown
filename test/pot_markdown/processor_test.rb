@@ -9,24 +9,40 @@ class ProcessorTest < Test::Unit::TestCase
     PotMarkdown::Processor.new.call(text, context)[:toc].to_s
   end
 
+  def render_body_diff(result, markdown, context = {})
+    Diffy::Diff.new(render(markdown, context), result).to_s
+  end
+
+  def render_toc_diff(result, markdown, context = {})
+    Diffy::Diff.new(render_toc(markdown, context), result).to_s
+  end
+
   sub_test_case 'integration' do
     sub_test_case 'script enable' do
       test 'body' do
-        render(read_file('sample.md'), sanitize_use_external: true) == read_file('sample_script_body.html')
+        diff = render_body_diff(
+          read_file('sample_script_body.html'), read_file('sample.md'), sanitize_use_external: true)
+        assert_true(diff.empty? ? true : (puts diff))
       end
 
       test 'toc' do
-        render_toc(read_file('sample.md'), sanitize_use_external: true) == read_file('sample_script_toc.html')
+        diff = render_toc_diff(
+          read_file('sample_script_toc.html'), read_file('sample.md'), sanitize_use_external: true)
+        assert_true(diff.empty? ? true : (puts diff))
       end
     end
 
     sub_test_case 'script disable' do
       test 'body' do
-        render(read_file('sample.md'), sanitize_use_external: false) == read_file('sample_noscript_body.html')
+        diff = render_body_diff(
+          read_file('sample_noscript_body.html'), read_file('sample.md'), sanitize_use_external: false)
+        assert_true(diff.empty? ? true : (puts diff))
       end
 
       test 'toc' do
-        render_toc(read_file('sample.md'), sanitize_use_external: false) == read_file('sample_noscript_toc.html')
+        diff = render_toc_diff(
+          read_file('sample_noscript_toc.html'), read_file('sample.md'), sanitize_use_external: false)
+        assert_true(diff.empty? ? true : (puts diff))
       end
     end
   end

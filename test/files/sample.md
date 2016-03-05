@@ -23,6 +23,10 @@ https://www.nicovideo.jp
         - Item 3-2-2
     - Item 3-3
 - Item 4
+- [x] task A
+- [ ] task B
+    - [ ] task C
+    - [x] task D
 
 1. line 1
 2. line 2

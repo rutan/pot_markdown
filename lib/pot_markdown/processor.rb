@@ -6,6 +6,7 @@ require 'pot_markdown/filters/sanitize_script_filter'
 require 'pot_markdown/filters/sanitize_iframe_filter'
 require 'pot_markdown/filters/mention_filter'
 require 'pot_markdown/filters/toc_filter'
+require 'pot_markdown/filters/checkbox_filter'
 
 module PotMarkdown
   class Processor
@@ -29,6 +30,7 @@ module PotMarkdown
       PotMarkdown::Filters::MarkdownFilter,
       PotMarkdown::Filters::TOCFilter,
       PotMarkdown::Filters::MentionFilter,
+      PotMarkdown::Filters::CheckboxFilter,
       HTML::Pipeline::AutolinkFilter,
       HTML::Pipeline::EmojiFilter,
       PotMarkdown::Filters::SanitizeHTMLFilter,

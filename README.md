@@ -43,6 +43,12 @@ processor.call("# title\n\n Hello, **Potmum!** ...", context)
     - header link icon
     - default)
         - `<i class="fa fa-link"></i>`
+- `checkbox_enable`
+    - not set attribute `disabled` to checkbox
+    - default: `false`
+- `checkbox_class`
+    - `<li>` 's class with checkbox
+    - default: `task-list-item`
 - `sanitize_rule`
     - [sanitize gem](https://github.com/rgrove/sanitize) parameters.
 - `sanitize_use_external`
