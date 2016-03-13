@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'html-pipeline', '~> 2.0'
-  spec.add_dependency 'kramdown', '~> 1.9'
+  spec.add_dependency 'kramdown', '~> 1.10'
   spec.add_dependency 'rouge'
   spec.add_dependency 'gemoji'
   spec.add_dependency 'rinku'

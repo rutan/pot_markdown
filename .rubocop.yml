@@ -4,6 +4,7 @@ AllCops:
     - tmp/**/*
     - vendor/**/*
     - test/files/**/*
+    - lib/kramdown/parser/pot_markdown/table.rb
 
 AsciiComments:
   Enabled: false
