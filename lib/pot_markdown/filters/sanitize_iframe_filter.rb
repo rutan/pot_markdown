@@ -27,6 +27,9 @@ module PotMarkdown
         # niconisolid
         %r{\Ahttps?://3d.nicovideo.jp/externals/(?:widget|embedded)\?id=td\d+\z},
 
+        # niconare
+        %r{\Ahttps?://niconare.nicovideo.jp/embed_works/kn\d+\z},
+
         # slideshare
         %r{\A(https?:)?//www.slideshare.net/slideshow/embed_code/key/[^/]+\z},
 
