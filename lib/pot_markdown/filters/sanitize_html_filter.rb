@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'sanitize'
 
+require 'pot_markdown/filters/sanitize_transformers/id_transformer'
 require 'pot_markdown/filters/sanitize_transformers/list_transformer'
 require 'pot_markdown/filters/sanitize_transformers/table_transformer'
 
@@ -80,6 +81,7 @@ module PotMarkdown
             datetime
             height
             hreflang
+            id
             itemprop
             lang
             name
@@ -133,6 +135,7 @@ module PotMarkdown
           }
         },
         transformers: [
+          SanitizeTransformers::IdTransformer,
           SanitizeTransformers::ListTransformer,
           SanitizeTransformers::TableTransformer
         ]
