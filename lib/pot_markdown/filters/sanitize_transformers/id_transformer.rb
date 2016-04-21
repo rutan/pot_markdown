@@ -15,7 +15,7 @@ module PotMarkdown
 
         def transform
           return unless node.attribute('id')
-          return if node.attribute('id').to_s =~ /\Afn/
+          return if node.attribute('id').to_s =~ /\A(?:fn|id\-)/
           node.remove_attribute('id')
         end
       end

@@ -58,17 +58,17 @@ class ProcessorTest < Test::Unit::TestCase
 ###### h6
       EOL
       result = <<-EOL
-<h1>
+<h1 id="id-h1">
 <a href=\"#id-h1\"><i class=\"fa fa-link\"></i></a>h1</h1>
-<h2>
+<h2 id="id-h2">
 <a href=\"#id-h2\"><i class=\"fa fa-link\"></i></a>h2</h2>
-<h3>
+<h3 id="id-h3">
 <a href=\"#id-h3\"><i class=\"fa fa-link\"></i></a>h3</h3>
-<h4>
+<h4 id="id-h4">
 <a href=\"#id-h4\"><i class=\"fa fa-link\"></i></a>h4</h4>
-<h5>
+<h5 id="id-h5">
 <a href=\"#id-h5\"><i class=\"fa fa-link\"></i></a>h5</h5>
-<h6>
+<h6 id="id-h6">
 <a href=\"#id-h6\"><i class=\"fa fa-link\"></i></a>h6</h6>
       EOL
       render(text) == result.rstrip!
