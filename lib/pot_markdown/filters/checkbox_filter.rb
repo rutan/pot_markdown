@@ -4,6 +4,7 @@ module PotMarkdown
       def call
         doc.xpath('.//li').each do |node|
           child = node.children.first
+          next unless child
           next unless child.name == 'text'
           checkbox, text = checkbox_filter(child.text)
           next unless checkbox
