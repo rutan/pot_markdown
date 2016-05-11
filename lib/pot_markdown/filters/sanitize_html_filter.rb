@@ -148,10 +148,9 @@ module PotMarkdown
       private
 
       def rule
-        case
-        when context[:sanitize_rule]
+        if context[:sanitize_rule]
           context[:sanitize_rule]
-        when context[:sanitize_use_external]
+        elsif context[:sanitize_use_external]
           RULE_EXT
         else
           RULE
