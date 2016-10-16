@@ -1,7 +1,8 @@
 module Kramdown
   module Parser
     class PotMarkdown
-      FENCED_CODEBLOCK_MATCH = /^(([~`]){3,})\s*?((\w[\w\:\.-]*)(?:\?\S*)?)?\s*?\n(.*?)^\1\2*\s*?\n/m
+      FENCED_CODEBLOCK_START = /^[ ]{0,3}[~`]{3,}/
+      FENCED_CODEBLOCK_MATCH = /^[ ]{0,3}(([~`]){3,})\s*?((\S+?)(?:\?\S*)?)?\s*?\n(.*?)^[ ]{0,3}\1\2*\s*?\n/m
 
       def parse_codeblock_fenced
         if @src.check(self.class::FENCED_CODEBLOCK_MATCH)

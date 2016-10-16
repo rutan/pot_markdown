@@ -12,7 +12,6 @@ module Kramdown
         @block_parsers.delete(:table)
       end
 
-      require 'kramdown/parser/pot_markdown/atx_header'
       require 'kramdown/parser/pot_markdown/code_block'
       require 'kramdown/parser/pot_markdown/table'
     end

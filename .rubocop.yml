@@ -21,6 +21,10 @@ LineLength:
 MethodLength:
   Max: 30
 
+BlockLength:
+  Exclude:
+    - test/**/*
+
 PerceivedComplexity:
   Exclude:
     - lib/kramdown/**/*

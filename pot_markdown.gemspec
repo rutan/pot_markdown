@@ -17,9 +17,9 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'html-pipeline', '~> 2.0'
-  spec.add_dependency 'kramdown', '~> 1.11.1'
-  spec.add_dependency 'rouge'
+  spec.add_dependency 'html-pipeline', '~> 2.4'
+  spec.add_dependency 'kramdown', '~> 1.12'
+  spec.add_dependency 'rouge', '~> 1.8'
   spec.add_dependency 'gemoji'
   spec.add_dependency 'rinku'
   spec.add_dependency 'sanitize'
@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'benchmark-ips'
   spec.add_development_dependency 'test-unit'
   spec.add_development_dependency 'diffy'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop', '0.44.1'
   spec.add_development_dependency 'activesupport'
 end

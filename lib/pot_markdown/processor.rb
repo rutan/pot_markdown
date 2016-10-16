@@ -1,4 +1,5 @@
 require 'html/pipeline'
+require 'rouge'
 
 require 'pot_markdown/filters/markdown_filter'
 require 'pot_markdown/filters/sanitize_html_filter'
